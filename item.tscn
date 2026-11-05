@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bo7kric75wadl"]
+
+[ext_resource type="Script" uid="uid://7qud5cyt2syi" path="res://item.gd" id="1_tnite"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjb58"]
+
+[node name="Item" type="Node2D" unique_id=462053888 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_tnite")
+sprite = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=774801590]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=497288522]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1204181272]
+shape = SubResource("CircleShape2D_vjb58")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

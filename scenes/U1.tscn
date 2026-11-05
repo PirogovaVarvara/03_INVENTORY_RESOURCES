@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bu61pm332t05x"]
+
+[ext_resource type="Script" uid="uid://bfmk1d0tg1oij" path="res://scripts/u1.gd" id="1_kbqti"]
+[ext_resource type="Texture2D" uid="uid://bn66i5mugf6nt" path="res://assets/sprite.png" id="2_27eyu"]
+[ext_resource type="FontFile" uid="uid://docn8gc40snbw" path="res://assets/ComicoroRu_0.ttf" id="3_27eyu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu3bi"]
+atlas = ExtResource("2_27eyu")
+region = Rect2(49, 18, 30, 12)
+
+[node name="U1" type="CanvasLayer" unique_id=1323805617 node_paths=PackedStringArray("label", "name_label")]
+visible = false
+script = ExtResource("1_kbqti")
+label = NodePath("MarginContainer/HBoxContainer/Label")
+name_label = NodePath("MarginContainer/HBoxName/LabelName")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=171412152]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2078351239]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="TextureRectMush" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1621262696]
+visible = false
+custom_minimum_size = Vector2(50, 15)
+layout_mode = 2
+texture = SubResource("AtlasTexture_mu3bi")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=776246392]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_27eyu")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="HBoxName" type="HBoxContainer" parent="MarginContainer" unique_id=563534229]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="LabelName" type="Label" parent="MarginContainer/HBoxName" unique_id=932344703]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_27eyu")

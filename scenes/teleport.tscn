@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bmx40sphc03yc"]
+
+[ext_resource type="Script" uid="uid://bstgd7cckrj8f" path="res://scripts/teleport.gd" id="1_2ayim"]
+[ext_resource type="Texture2D" uid="uid://bj7vlsfpvi2rp" path="res://assets/texture.png" id="2_2ayim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu3bi"]
+atlas = ExtResource("2_2ayim")
+region = Rect2(377, 62, 88, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ky71"]
+size = Vector2(6, 6)
+
+[node name="Teleport" type="Node2D" unique_id=309363036]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=768593359]
+script = ExtResource("1_2ayim")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1878798843]
+position = Vector2(-5.9604645e-08, 7.1054274e-15)
+scale = Vector2(0.0625, 0.08116883)
+texture = SubResource("AtlasTexture_mu3bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=230264317]
+visible = false
+shape = SubResource("RectangleShape2D_4ky71")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered_teleport"]

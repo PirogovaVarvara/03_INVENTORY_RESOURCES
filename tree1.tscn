@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c5fxdu7b28juy"]
+
+[ext_resource type="Script" uid="uid://bjvry3jmgo661" path="res://tree.gd" id="1_f80rq"]
+[ext_resource type="Texture2D" uid="uid://bn66i5mugf6nt" path="res://assets/sprite.png" id="2_xapk1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3unq"]
+atlas = ExtResource("2_xapk1")
+region = Rect2(24, 8, 7, 8)
+
+[node name="tree" type="Node2D" unique_id=1766883613]
+script = ExtResource("1_f80rq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1162981755]
+texture = SubResource("AtlasTexture_g3unq")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=598544845]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=1946034603]
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

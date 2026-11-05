@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dvyxv6wkln6pc"]
+
+[ext_resource type="Script" uid="uid://y5b832jaofvf" path="res://scenes/menu.gd" id="1_vjb58"]
+[ext_resource type="FontFile" uid="uid://docn8gc40snbw" path="res://assets/ComicoroRu_0.ttf" id="1_yqeox"]
+
+[node name="Menu" type="Control" unique_id=2120690415]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=250389232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.62508065, 0.3194034, 0.45756024, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1896293919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=628620994]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1830451094]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_yqeox")
+text = "Добро пожаловать!
+Введите имя игрока:"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer" unique_id=2123481951]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_yqeox")
+max_length = 7
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=1994308612]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_yqeox")
+text = "Start"
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_play_button_pressed"]
